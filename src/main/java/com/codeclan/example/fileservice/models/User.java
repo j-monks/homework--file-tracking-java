@@ -17,7 +17,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user")
     private List<Folder> folders;
 
@@ -44,5 +44,9 @@ public class User {
 
     public void setFolders(List<Folder> folders) {
         this.folders = folders;
+    }
+
+    public void addFolder(Folder folder) {
+        folders.add(folder);
     }
 }

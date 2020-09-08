@@ -31,10 +31,13 @@ public class DataLoader implements ApplicationRunner {
 
         Folder pictures = new Folder("Pictures");
         folderRepository.save(pictures);
-        File holidayPicture = new File("turkey", ".jpg", 12.00, pictures);
+        File holidayPicture = new File("turkey", ".jpg", 12.00);
         fileRepository.save(holidayPicture);
         User james = new User("James");
         userRepository.save(james);
+
+        pictures.addFile(holidayPicture);
+        james.addFolder(pictures);
 
     }
 }

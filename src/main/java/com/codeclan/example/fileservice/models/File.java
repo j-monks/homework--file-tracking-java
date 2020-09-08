@@ -26,11 +26,10 @@ public class File {
     @JsonIgnoreProperties({"files"})
     private Folder folder;
 
-    public File(String name, String extension, Double size, Folder folder) {
+    public File(String name, String extension, Double size) {
         this.name = name;
         this.extension = extension;
         this.size = size;
-        this.folder = folder;
     }
 
     public File() {

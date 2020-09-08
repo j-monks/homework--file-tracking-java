@@ -50,4 +50,8 @@ public class Folder {
     public void setFiles(List<File> files) {
         this.files = files;
     }
+
+    public void addFile(File file) {
+        files.add(file);
+    }
 }
