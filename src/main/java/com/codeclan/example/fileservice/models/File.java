@@ -19,21 +19,29 @@ public class File {
     private String extension;
 
     @Column(name = "size")
-    private Double size;
+    private int size;
 
     @ManyToOne
-    @JoinColumn(name = "folder_id", nullable = false)
+    @JoinColumn(name = "folder_id")
     @JsonIgnoreProperties({"files"})
     private Folder folder;
 
-    public File(String name, String extension, Double size) {
+    public File(String name, String extension, int size, Folder folder) {
         this.name = name;
         this.extension = extension;
         this.size = size;
+        this.folder = folder;
     }
 
     public File() {
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -52,11 +60,11 @@ public class File {
         this.extension = extension;
     }
 
-    public Double getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(Double size) {
+    public void setSize(int size) {
         this.size = size;
     }
 

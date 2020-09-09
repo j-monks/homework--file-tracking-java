@@ -27,7 +27,14 @@ public class User {
     }
 
     public User() {
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,9 +51,5 @@ public class User {
 
     public void setFolders(List<Folder> folders) {
         this.folders = folders;
-    }
-
-    public void addFolder(Folder folder) {
-        folders.add(folder);
     }
 }
